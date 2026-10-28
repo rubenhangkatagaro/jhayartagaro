@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ruben H. Tagaro Jr.'s personal portfolio">
+    <title>Ruben H. Tagaro Jr. | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <nav class="navbar container">
+        <a href="#home" class="logo">RUBEN<span>.</span></a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact" class="contact-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ANIMATED EYE INTRO -->
+<div class="welcome-intro" id="welcomeIntro">
+    <video class="intro-eye-video" autoplay muted loop playsinline>
+        <source src="eye-intro.mp4" type="video/mp4">
+    </video>
+
+    <div class="intro-shade"></div>
+
+    <div class="intro-message">
+        <p class="intro-kicker">WELCOME MY</p>
+        <h1>PORTFOLIO</h1>
+        <p class="intro-owner">RUBEN H. TAGARO JR.</p>
+
+        <div class="intro-loader">
+            <span class="intro-loader-fill"></span>
+        </div>
+
+        <p class="intro-loading">
+            LOADING PORTFOLIO<span class="loading-dots">...</span>
+        </p>
+    </div>
+</div>
+
+<main>
+
+    <!-- HOME SECTION -->
+    <section class="hero section" id="home">
+        <div class="container hero-content">
+
+            <div class="hero-text reveal">
+                <p class="eyebrow">STUDENT | ASPIRING DEVELOPER</p>
+
+                <h1>
+                    Hello, I'm<br>
+                    <span>Ruben H. Tagaro Jr.</span>
+                </h1>
+
+                <h2>BSCPE Student & Aspiring Developer</h2>
+
+                <p class="description">
+                    Welcome to my personal portfolio! I am passionate about
+                    technology, programming, and creating useful digital
+                    projects. This website showcases my background, skills,
+                    education, and projects.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">
+                        View My Projects ↗
+                    </a>
+
+                    <a href="#contact" class="btn secondary-btn">
+                        Contact Me
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/"
+                       target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+
+                    <a href="https://www.instagram.com/"
+                       target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+
+                    <a href="https://www.tiktok.com/"
+                       target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+                </div>
+            </div>
+
+            <div class="hero-image reveal">
+                <div class="profile-photo">
+                    <img src="image.png"
+                         alt="Ruben H. Tagaro Jr.">
+                </div>
+
+                <div class="floating-card">
+                    <span class="blue-dot"></span>
+                    Always Learning
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about" id="about">
+        <div class="container">
+
+            <div class="section-title reveal">
+                <p class="eyebrow">GET TO KNOW ME</p>
+                <h2>About <span>Me</span></h2>
+            </div>
+
+            <div class="about-content">
+
+                <div class="about-card reveal">
+                    <span class="about-initials">RT.</span>
+                    <h3>Ruben H. Tagaro Jr.</h3>
+                    <p>Student | Aspiring Developer</p>
+                </div>
+
+                <div class="about-text reveal">
+                    <h3>Hi! Welcome to My Portfolio.</h3>
+
+                    <p>
+                        I am Ruben H. Tagaro Jr., an Bachelor of Science in Computer Engineering (BSCpE) student interested
+                        in computers, programming, web development, and
+                        technology.
+                    </p>
+
+                    <p>
+                        I enjoy learning new skills and working on projects
+                        that help me improve my knowledge. Through school
+                        activities and personal projects, I aim to become a
+                        skilled developer and create useful technological
+                        solutions.
+                    </p>
+
+                    <div class="personal-info">
+                        <p><strong>Name:</strong> Ruben H. Tagaro Jr.</p>
+                        <p><strong>Strand:</strong> Bachelor of Science in Computer Engineering (BSCpE)</p>
+                        <p><strong>Interest:</strong> Programming and Technology</p>
+                        <p><strong>Location:</strong> Philippines</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section education" id="education">
+        <div class="container">
+
+            <div class="section-title centered reveal">
+                <p class="eyebrow">MY ACADEMIC JOURNEY</p>
+                <h2>My <span>Education</span></h2>
+                <p>My educational background and learning journey.</p>
+            </div>
+
+            <div class="education-grid">
+
+                <article class="education-card reveal">
+                    <div class="education-icon">01</div>
+                    <p class="education-level">ELEMENTARY</p>
+                    <h3>Elementary Education</h3>
+                    <p class="education-description">
+                        My elementary school education.
+                    </p>
+                </article>
+
+                <article class="education-card reveal">
+                    <div class="education-icon">02</div>
+                    <p class="education-level">JUNIOR HIGH SCHOOL</p>
+                    <h3>Junior High School</h3>
+                    <p class="education-description">
+                        My junior high school education.
+                    </p>
+                </article>
+
+                <article class="education-card reveal">
+                    <div class="education-icon">03</div>
+                    <p class="education-level">SENIOR HIGH SCHOOL</p>
+                    <h3>Asian Institute of Computer Studies</h3>
+                    <p class="education-description">
+                        Information and Communications Technology (ICT).
+                    </p>
+                    <p class="education-year">School Year 2025–2026</p>
+                </article>                
+                
+                <article class="education-card reveal">
+                    <div class="education-icon">04</div>
+                    <p class="education-level">COLLEGE</p>
+                    <h3>Colegio De Montalban</h3>
+                    <p class="education-description">
+                        Bachelor of Science in Computer Engineering (BSCPE).
+                    </p>
+                    <p class="education-year">Present</p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section skills" id="skills">
+        <div class="container">
+
+            <div class="section-title centered reveal">
+                <p class="eyebrow">WHAT I AM LEARNING</p>
+                <h2>My <span>Skills</span></h2>
+                <p>Technologies and abilities I continue to develop.</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <article class="skill-card reveal">
+                    <div class="skill-icon orange">5</div>
+                    <h3>HTML</h3>
+                    <p>Creating webpage structures.</p>
+                </article>
+
+                <article class="skill-card reveal">
+                    <div class="skill-icon blue">3</div>
+                    <h3>CSS</h3>
+                    <p>Styling websites and designing layouts.</p>
+                </article>
+
+                <article class="skill-card reveal">
+                    <div class="skill-icon yellow">JS</div>
+                    <h3>JavaScript</h3>
+                    <p>Adding interaction and functionality to websites.</p>
+                </article>
+
+
+                <article class="skill-card reveal">
+                    <div class="skill-icon green">⚙</div>
+                    <h3>Electronics</h3>
+                    <p>Learning about electronic components and systems.</p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects" id="projects">
+        <div class="container">
+
+            <div class="section-title reveal">
+                <p class="eyebrow">MY WORK</p>
+                <h2>My <span>Projects</span></h2>
+                <p>Explore my projects by clicking their cards.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- PERSONAL PORTFOLIO PROJECT -->
+                <a href="portfolio-details.html"
+                   class="project-card reveal"
+                   aria-label="View Personal Portfolio project">
+
+                    <div class="project-visual website-visual">
+                        <span>&lt;/&gt;</span>
+                    </div>
+
+                    <div class="project-info">
+                        <p class="project-category">WEB DEVELOPMENT</p>
+
+                        <h3>Personal Portfolio</h3>
+
+                        <p>
+                            A personal website that presents my background,
+                            education, skills, and projects in one place.
+                        </p>
+
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <p class="project-click">View Project Details ↗</p>
+                    </div>
+                </a>
+
+                <!-- BLIND STA PROJECT -->
+                <a href="blindsta-details.html"
+                   class="project-card reveal"
+                   aria-label="View BLIND STA Blind Stick Assistance project">
+
+                    <div class="project-visual blindsta-visual">
+                        <span>BLINDSTA</span>
+                    </div>
+
+                    <div class="project-info">
+                        <p class="project-category">CAPSTONE PROJECT</p>
+
+                        <h3>BLIND STA: Blind Stick Assistance</h3>
+
+                        <p>
+                            An assistive technology project designed to help
+                            visually impaired individuals detect nearby
+                            obstacles using a sensor and audio alerts.
+                        </p>
+
+                        <div class="tags">
+                            <span>ESP32</span>
+                            <span>Ultrasonic Sensor</span>
+                            <span>Audio Alerts</span>
+                        </div>
+
+                        <p class="project-click">View Project Details ↗</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact" id="contact">
+        <div class="container contact-content">
+
+            <div class="contact-text reveal">
+                <p class="eyebrow">LET'S CONNECT</p>
+
+                <h2>Get in <span>Touch</span></h2>
+
+                <p>
+                    Have a question or want to talk about a project?
+                    Send me a message using the form.
+                </p>
+
+                <p class="contact-detail">
+                    <strong>Name:</strong> Ruben H. Tagaro Jr.
+                </p>
+
+                <p class="contact-detail">
+                    <strong>Location:</strong> Philippines
+                </p>
+
+                <p class="contact-detail">
+                    <strong>Email:</strong> rubenhangkatagaro@gmail.com
+                </p>
+            </div>
+
+
+<form class="contact-form" id="contactForm">
+    <h3>Send Me a Message</h3>
+
+    <label for="name">Your Name</label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+        required
+    >
+
+    <label for="email">Your Email</label>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+    >
+
+    <label for="message">Your Message</label>
+    <textarea
+        id="message"
+        name="message"
+        rows="5"
+        placeholder="Write your message here..."
+        required
+    ></textarea>
+
+    <button type="submit" class="btn primary-btn">
+        Send Message ↗
+    </button>
+
+    <p id="formNote" class="form-note" aria-live="polite"></p>
+</form>
+
+
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-content">
+
+        <a href="#home" class="logo">Ruben H. Tagaro Jr.<span>.</span></a>
+
+        <p>
+            Designed and developed by Ruben H. Tagaro Jr.
+        </p>
+
+        <div class="social-links footer-social-links">
+            <a href="https://www.facebook.com/"
+               target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+
+            <a href="https://www.instagram.com/"
+               target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+
+            <a href="https://www.tiktok.com/"
+               target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+        </div>
+
+        <p>© <span id="year">2026</span> All rights reserved.</p>
+
+    </div>
+</footer>
+
+</body>
+</html>

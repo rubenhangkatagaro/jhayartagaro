@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BLIND STA | Ruben Tagaro</title>
+
+    <style>
+        /* GENERAL SETTINGS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #061326;
+            color: #f5f8ff;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+        header {
+            background: #0b2144;
+            border-bottom: 1px solid #174b83;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #1685ff;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 11px 22px;
+            border-radius: 14px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .primary-btn {
+            background: #1677ff;
+            color: white;
+        }
+
+        .secondary-btn {
+            background: #1677ff;
+            color: white;
+        }
+
+        .btn:hover {
+            background: #3695ff;
+            transform: translateY(-2px);
+        }
+
+        /* PAGE TITLE */
+        .project-hero {
+            padding: 40px 0 45px;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    #102f60,
+                    transparent 55%
+                ),
+                #061326;
+            border-bottom: 1px solid #174b83;
+        }
+
+        .eyebrow {
+            color: #1696ff;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .project-hero h1 {
+            font-size: clamp(32px, 5vw, 54px);
+            line-height: 1.15;
+            max-width: 850px;
+            margin-bottom: 8px;
+        }
+
+        .project-hero h1 span {
+            display: block;
+            color: #1685ff;
+        }
+
+        /* MAIN CONTENT */
+        .project-details-page {
+            padding: 35px 0 55px;
+        }
+
+        .blindsta-project-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr)
+                                   minmax(280px, 0.9fr);
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* LEFT COLUMN */
+        .blindsta-project-details {
+            min-width: 0;
+        }
+
+        .project-section {
+            padding: 22px 0;
+            border-bottom: 1px solid #174b83;
+        }
+
+        .project-section:first-child {
+            padding-top: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .section-icon {
+            flex-shrink: 0;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: #104b9b;
+            color: #69c5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(20px, 2.5vw, 27px);
+            line-height: 1.3;
+        }
+
+        .project-section p {
+            color: #d3e2f8;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .project-section ul {
+            list-style: none;
+            padding-left: 8px;
+        }
+
+        .project-section li {
+            position: relative;
+            padding-left: 25px;
+            margin: 7px 0;
+            color: #d3e2f8;
+        }
+
+        .project-section li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #1685ff;
+            font-weight: bold;
+        }
+
+        .hardware-list li::before {
+            content: "•";
+            font-size: 22px;
+            line-height: 1.3;
+        }
+
+        /* RIGHT COLUMN: PORTRAIT IMAGE */
+        .blindsta-project-image {
+            width: 100%;
+            position: sticky;
+            top: 100px;
+        }
+
+        .blindsta-project-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 680px;
+            object-fit: contain;
+            object-position: top;
+            border: 1px solid #24456d;
+            border-radius: 12px;
+            background: #091a30;
+        }
+
+        .image-caption {
+            color: #91afd4;
+            text-align: center;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        /* SECTIONS BELOW BOTH COLUMNS */
+        .full-width-section {
+            margin-top: 25px;
+            padding: 25px 0;
+            border-bottom: 1px solid #174b83;
+        }
+
+        .full-width-section .section-heading {
+            margin-bottom: 12px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            padding-left: 65px;
+        }
+
+        .tags span {
+            display: inline-block;
+            padding: 7px 15px;
+            border: 1px solid #1685ff;
+            color: #64baff;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+
+        .back-projects {
+            margin-top: 30px;
+        }
+
+        /* FOOTER */
+        .footer {
+            border-top: 1px solid #174b83;
+            background: #041024;
+            padding: 22px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer p {
+            color: #c4d5ee;
+            font-size: 13px;
+        }
+
+        /* TABLET AND MOBILE */
+        @media (max-width: 768px) {
+            .container {
+                width: 92%;
+            }
+
+            .navbar {
+                min-height: 65px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .btn {
+                padding: 9px 13px;
+                font-size: 13px;
+            }
+
+            .project-hero {
+                padding: 32px 0;
+            }
+
+            .blindsta-project-layout {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            /* Image appears beside the content on desktop,
+               and above the details on mobile. */
+            .blindsta-project-image {
+                position: static;
+                grid-row: 1;
+                max-width: 460px;
+                margin: 0 auto;
+            }
+
+            .blindsta-project-image img {
+                max-height: none;
+                width: 100%;
+            }
+
+            .blindsta-project-details {
+                grid-row: 2;
+            }
+
+            .project-section {
+                padding: 20px 0;
+            }
+
+            .section-heading {
+                gap: 12px;
+            }
+
+            .section-icon {
+                width: 46px;
+                height: 46px;
+                font-size: 22px;
+            }
+
+            .project-section p {
+                font-size: 16px;
+            }
+
+            .tags {
+                padding-left: 0;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .navbar {
+                gap: 8px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .secondary-btn {
+                font-size: 12px;
+                padding: 8px 10px;
+            }
+
+            .section-heading h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar container">
+            <a href="index.html" class="logo">
+                Ruben<span>.</span>
+            </a>
+
+            <a href="index.html#projects" class="btn secondary-btn">
+                ← Back to Projects
+            </a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PROJECT TITLE -->
+        <section class="project-hero">
+            <div class="container">
+                <p class="eyebrow">Capstone Project</p>
+
+                <h1>
+                    BLIND STA:
+                    <span>Blind Stick Assistance</span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- PROJECT DETAILS AND PORTRAIT IMAGE -->
+        <section class="project-details-page">
+            <div class="container">
+
+                <div class="blindsta-project-layout">
+
+                    <!-- LEFT SIDE: DETAILS -->
+                    <div class="blindsta-project-details">
+
+                        <!-- ABOUT THE PROJECT -->
+                        <section class="project-section">
+                            <div class="section-heading">
+                                <div class="section-icon">◎</div>
+                                <h2>About the Project</h2>
+                            </div>
+
+                            <p>
+                                BLIND STA is a smart blind stick assistance
+                                project designed to help visually impaired
+                                individuals identify obstacles while moving
+                                around.
+                            </p>
+                        </section>
+
+                        <!-- PROJECT OBJECTIVES -->
+                        <section class="project-section">
+                            <div class="section-heading">
+                                <div class="section-icon">◉</div>
+                                <h2>Project Objectives</h2>
+                            </div>
+
+                            <ul>
+                                <li>Detect obstacles before physical contact.</li>
+                                <li>Provide audio alerts to warn the user.</li>
+                                <li>Support safer movement indoors and outdoors.</li>
+                                <li>Develop a lightweight and practical assistive device.</li>
+                            </ul>
+                        </section>
+
+                        <!-- HARDWARE AND COMPONENTS -->
+                        <section class="project-section">
+                            <div class="section-heading">
+                                <div class="section-icon">▦</div>
+                                <h2>Hardware and Components</h2>
+                            </div>
+
+                            <ul class="hardware-list">
+                                <li>ESP32 microcontroller</li>
+                                <li>HC-SR04 ultrasonic sensor</li>
+                                <li>DFPlayer Mini audio module</li>
+                                <li>Mini speaker</li>
+                                <li>Power bank and connecting wires</li>
+                            </ul>
+                        </section>
+
+                    </div>
+
+                    <!-- RIGHT SIDE: PORTRAIT PNG COLLAGE -->
+                    <aside class="blindsta-project-image">
+                        <img
+                            src="blindsta-collage.png"
+                            alt="BLIND STA project collage showing the team, prototype, and project presentation"
+                        >
+
+                        <p class="image-caption">
+                            BLIND STA — Project Documentation
+                        </p>
+                    </aside>
+
+                </div>
+
+                <!-- HOW IT WORKS -->
+                <section class="full-width-section">
+                    <div class="section-heading">
+                        <div class="section-icon">⚙</div>
+                        <h2>How It Works</h2>
+                    </div>
+
+                    <p>
+                        The ultrasonic sensor measures the distance between
+                        the stick and nearby objects. The ESP32 processes
+                        the sensor readings and triggers an audio alert
+                        when an obstacle is detected within the configured
+                        distance.
+                    </p>
+                </section>
+
+                <!-- TECHNOLOGIES USED -->
+                <section class="full-width-section">
+                    <div class="section-heading">
+                        <div class="section-icon">&lt;/&gt;</div>
+                        <h2>Technologies Used</h2>
+                    </div>
+
+                    <div class="tags">
+                        <span>ESP32</span>
+                        <span>Ultrasonic Sensor</span>
+                        <span>DFPlayer Mini</span>
+                        <span>BreadBoard</span>
+                        <span>PowerButton</span>
+                        <span>Mini Speaker</span>
+                        <span>Soil Moisture Sensor Module</span>
+                    </div>
+                </section>
+
+                <!-- BACK BUTTON -->
+                <div class="back-projects">
+                    <a href="index.html#projects" class="btn primary-btn">
+                        ← Back to Projects
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="index.html" class="logo">
+                Ruben<span>.</span>
+            </a>
+
+            <p>Designed and built by Ruben Tagaro.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
